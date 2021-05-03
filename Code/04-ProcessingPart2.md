@@ -1,4 +1,4 @@
-# `04-ProcessingPart2.md`
+# `04-DataProcessingPart2.md`
 
 This file describes how the data were processed to format them for plotting with ggplot in R.
 
@@ -75,5 +75,7 @@ join -1 1 -2 1 -t "$(printf '\t')" MPAO1_feature_table_abbrev.txt
 This file will be imported into R for plotting with ggplot in the file `05-ggplotFigures.Rmd`.
 
 ## Figure 3B or 3C?
+
+The data presented in Table S1 was copied into an excel file, formated and saved as a .csv file, which was imported to Rstudio to reproduce Fig. 3 C. The codes used for ggplot were provided in '05-ggplotFigures.Rmd'.
 
 **Add information in if there was processing of the data before it was plotted.**
