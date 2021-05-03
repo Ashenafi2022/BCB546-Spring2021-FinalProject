@@ -17,7 +17,8 @@ This markdown explains the pipeline in which we used to process the reference ge
 4- Trimming Met-Seq Files for Data Analysis
 
 
-##1) Downloading Genome Files:
+## 1) Downloading Genome Files
+
 1. Download the Reference Genome FASTA file (can be downloaded from NCBI) 
 *([MPAO1 GenBank: CP027857.1](https://www.ncbi.nlm.nih.gov/nuccore/CP027857.1?report=genbank))
 	* To download the FASTA file: 
