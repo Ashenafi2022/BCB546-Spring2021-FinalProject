@@ -18,7 +18,7 @@ This markdown file goes through the pipeline that our group used to analyze the 
 
 3- Using Tn-Seq Analysis Software (TSAS) for Met-Seq data manipulation and statistical analyses
 
-##1) Installations
+## 1) Installations
 
 1. Install Java -
 
