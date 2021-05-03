@@ -158,6 +158,50 @@ ggplot(data = AllSorted, aes(x=factor(Category, level = category_order), y=count
 # There's a warning that comes up when you run this plot, as I created a vector for coloring the text on the x-axis. If that causes problems in your version of R, delete "color=color_order" from the axis.test.x line and it should run just fine.
 ```
 
+I was not able to reproduce Fig. 3C using the codes Marissa provided. Using the following codes, I am able to read the data from the repository and plot the graph. However, RNA and cell wall/Envelop are missing.
+
+---
+title: "Final Project"
+author: "Ashenafi Beyi"
+date: "4/19/2021"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+Table S1A, Met-Seq enriched open reading frames, was copied into an excel file and deposited in the repository.
+
+The data is read to R from the repository.
+```{r}
+tableS1A <- read.csv("https://raw.githubusercontent.com/Ashenafi2022/BCB546-Spring2021-FinalProject/master/Data/TableS1A.csv", header=T)
+dim(tableS1A)
+str(tableS1A)
+```
+
+A bar plot to depict the frequency distribution of genes by their functions
+
+```{r}
+library(tidyverse)
+
+tableS1A$Category <- as.factor(tableS1A$Category)
+ Fig3C <-   ggplot(data=tableS1A) +
+            geom_bar(mapping = aes(Category, fill=Category)) +
+            labs(x="Gene categories", y="Number of Genes") 
+
+ Fig3C + scale_fill_discrete(name = "Gene catagories", 
+                           labels = c("Quorum sensing", "Adherence/Motility", "Energy/Metabolism", 
+                                      "Fe/Heme", "DNA", "Protein", 
+                                      "Virulence", "Transportation", "Cellular stress",
+                                      "Fatty acids", "Regulation/Signal transduction", 
+                                      "Polyamines", "Unknown Based on manual annotation")) +
+     theme(legend.title = element_text(color = "black", size = 10),
+           legend.text = element_text(color = "black"),
+           axis.title.x=element_blank(),
+           axis.text.x=element_blank(),
+          axis.ticks.x=element_blank())
+```
+
+
 
 
 
